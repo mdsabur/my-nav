@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import * as Location from 'expo-location';
+import * as LocatioAn from 'expo-location';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 
 export default function Details() {

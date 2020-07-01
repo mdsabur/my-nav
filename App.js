@@ -109,3 +109,4 @@ function Details() {
     </View>
   );
 }
+

@@ -21,6 +21,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "android": {
+      "package": "com.pointzerolimited.gmap",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyD63qV_yi1Xo7QPKHUj5NSHZJT-ndjg3IM"
+        }
+      }
     }
   }
 }

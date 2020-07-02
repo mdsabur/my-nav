@@ -4,7 +4,7 @@ import { TabNavigator } from "react-navigation";
 import MapView, { PROVIDER_GOOGLE, Marker, AnimatedRegion } from 'react-native-maps';
 
 
-class LocationA extends Component {
+class LocationUser extends Component {
     constructor(props) {
         super(props);
 
@@ -12,6 +12,9 @@ class LocationA extends Component {
             latitude: null,
             longitude: null,
             error: null,
+        };
+		this.state = {
+            	Region: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }
         };
 		
     }
@@ -21,29 +24,41 @@ class LocationA extends Component {
             (position) => {
                 console.log("Location");
                 console.log(position);
-                this.setState({
+				
+				let region = {
+                latitude: parseFloat(position.coords.latitude),
+                longitude: parseFloat(position.coords.longitude),
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421 
+				};
+			              				
+				this.setState({
+                   Region: region
+                });
+				
+				  this.setState({
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude,
                     error: null,
                 });
+				
             },
             (error) => this.setState({ error: error.message }),
             { enableHighAccuracy: false, timeout: 200000, maximumAge: 1000 },
         );
     }
 
-
+		
+		  
     render() {
         return (
             <View style={styles.container}>
                 <MapView style={styles.mapStyle}
-
-                    initialRegion={{
-                        latitude: 23.7300206,
-                        longitude: 90.37976,
-                        latitudeDelta: 0.003,
-                        longitudeDelta: 0.003
-                    }}
+					ref = {(ref)=>this.mapView=ref}
+                    initialRegion={this.state.Region}
+					region={this.state.Region}
+					
+					
 					showsUserLocation = {true}
 					>
 
@@ -79,4 +94,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default LocationA;
+export default LocationUser;

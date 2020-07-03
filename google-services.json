@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "948867878376",
+    "firebase_url": "https://mynotification-a57f9.firebaseio.com",
+    "project_id": "mynotification-a57f9",
+    "storage_bucket": "mynotification-a57f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948867878376:android:a102a21d98a056af05685d",
+        "android_client_info": {
+          "package_name": "com.pointzerolimited.gmap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948867878376-7a2cgttj92nbi0eajij980imj1e3l3hr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTpbPW7PyuFd0Jw4pvhwPuxvUNWMTFg4Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "948867878376-7a2cgttj92nbi0eajij980imj1e3l3hr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

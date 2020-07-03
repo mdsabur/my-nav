@@ -4,7 +4,7 @@ import { TabNavigator } from "react-navigation";
 import MapView, { PROVIDER_GOOGLE, Marker, AnimatedRegion } from 'react-native-maps';
 
 
-class LocationUser extends Component {
+class LocationUserMap extends Component {
     constructor(props) {
         super(props);
 
@@ -13,10 +13,10 @@ class LocationUser extends Component {
             longitude: null,
             error: null,
         };
-		this.state = {
-            	Region: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }
+        this.state = {
+            Region: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }
         };
-		
+
     }
 
     componentDidMount() {
@@ -24,43 +24,43 @@ class LocationUser extends Component {
             (position) => {
                 console.log("Location");
                 console.log(position);
-				
-				let region = {
-                latitude: parseFloat(position.coords.latitude),
-                longitude: parseFloat(position.coords.longitude),
-                latitudeDelta: 0.0922,
-                longitudeDelta: 0.0421 
-				};
-			              				
-				this.setState({
-                   Region: region
+
+                let region = {
+                    latitude: parseFloat(position.coords.latitude),
+                    longitude: parseFloat(position.coords.longitude),
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421
+                };
+
+                this.setState({
+                    Region: region
                 });
-				
-				  this.setState({
+
+                this.setState({
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude,
                     error: null,
                 });
-				
+
             },
             (error) => this.setState({ error: error.message }),
             { enableHighAccuracy: false, timeout: 200000, maximumAge: 1000 },
         );
     }
 
-		
-		  
+
+
     render() {
         return (
             <View style={styles.container}>
                 <MapView style={styles.mapStyle}
-					ref = {(ref)=>this.mapView=ref}
+                    ref={(ref) => this.mapView = ref}
                     initialRegion={this.state.Region}
-					region={this.state.Region}
-					
-					
-					showsUserLocation = {true}
-					>
+                    region={this.state.Region}
+
+
+                    showsUserLocation={true}
+                >
 
                     {!!this.state.latitude && !!this.state.longitude &&
                         <MapView.Marker
@@ -94,4 +94,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default LocationUser;
+export default LocationUserMap;

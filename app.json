@@ -24,6 +24,7 @@
     },
     "android": {
       "package": "com.pointzerolimited.gmap",
+      "googleServicesFile": "./google-services.json",
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyD63qV_yi1Xo7QPKHUj5NSHZJT-ndjg3IM"

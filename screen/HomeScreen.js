@@ -9,11 +9,12 @@ import TabAScreen from './TabAScreen';
 import * as Location from 'expo-location';
 import LocationUser from './LocationUser';
 
-
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 const Tab = createBottomTabNavigator();
 
 export default function HomeScreen({ navigation }) {
+
+    // get user location
 
     global.region = {};
 
@@ -62,6 +63,7 @@ export default function HomeScreen({ navigation }) {
         >
             <Tab.Screen name="TabA" component={TabAScreen} />
             <Tab.Screen name="TabB" component={LocationUser} />
+
         </Tab.Navigator>
     );
 }

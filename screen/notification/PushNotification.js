@@ -4,6 +4,7 @@ import * as Permissions from 'expo-permissions';
 import React, { useState, useEffect } from 'react';
 import { Text, View, Button, Platform, StyleSheet } from 'react-native';
 
+
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
         shouldShowAlert: true,
@@ -15,6 +16,8 @@ Notifications.setNotificationHandler({
 export default function PushNotification() {
     const [expoPushToken, setExpoPushToken] = useState('');
     const [notification, setNotification] = useState(false);
+
+    const PUSH_ENDPOINT = 'https://easy-soup.glitch.me/token';
 
     useEffect(() => {
         registerForPushNotificationsAsync().then(token => setExpoPushToken(token));

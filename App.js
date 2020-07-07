@@ -5,6 +5,8 @@ import React from 'react';
 
 import HomeScreen from './screen/HomeScreen';
 import SettingsScreen from './screen/SettingsScreen';
+import NotificationScreen from './screen/NotificationScreen';
+
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
@@ -16,6 +18,7 @@ export default function App() {
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Settings" component={SettingsScreen} />
+        <Drawer.Screen name="Notification" component={NotificationScreen} />
       </Drawer.Navigator>
     </NavigationContainer>);
 }
